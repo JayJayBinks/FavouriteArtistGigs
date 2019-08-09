@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Gig } from '../gig';
-import { GIGS } from '../mock-gigs';
+import { GigService } from '../gig.service';
 
 @Component({
   selector: 'app-artist-gigs',
@@ -9,15 +9,21 @@ import { GIGS } from '../mock-gigs';
 })
 export class ArtistGigsComponent implements OnInit {
 
-  gigs = GIGS;
+  gigs: Gig[];
   selectedGig: Gig;
 
-  constructor() { }
+  constructor(private gigService: GigService) { }
 
   ngOnInit() {
+    this.getGigs();
   }
 
   onSelect(gig: Gig): void {
     this.selectedGig = gig;
+  }
+
+  getGigs(): void {
+    this.gigService.getGigs()
+      .subscribe(gigs => this.gigs = gigs);
   }
 }

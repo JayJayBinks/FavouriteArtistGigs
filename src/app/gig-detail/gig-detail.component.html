@@ -1,0 +1,10 @@
+<div *ngIf="gig">
+  <h2>{{gig.artist | uppercase}} Details</h2>
+  <div><span>date: </span>{{gig.date | date:'h:mm a MMM d'}}</div>
+  <div><span>location: </span>{{gig.location}}</div>
+  <div>
+    <label>comment:
+      <input [(ngModel)]="gig.comment" placeholder="comment"/>
+    </label>
+  </div>
+</div>
