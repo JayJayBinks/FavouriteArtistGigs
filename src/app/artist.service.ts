@@ -14,7 +14,7 @@ export class ArtistService {
   artists: TopArtist[] = [];
   artistsResource: TopArtistsResource = null;
   private user = 'tbrmaster';
-  private apiKey = environment.lastFmApiKey;
+  private apiKey: string = environment.lastFmApiKey;
   private baseUrl = 'http://ws.audioscrobbler.com/2.0/';
   private topArtistsURL = this.baseUrl + '?method=user.gettopartists&user=' + this.user + '&api_key=' + this.apiKey + '&limit=10&format=json';
 

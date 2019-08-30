@@ -2,10 +2,8 @@
 <ul class="gigs">
   <li *ngFor="let gig of gigs">
     <a routerLink="/gigDetail/{{gig.id}}">
-      <span class="badge">{{gig.title}}</span>
-      {{gig.start_time | date:'h:mm a MMM d'}}
-      {{gig.city_name}}
-      {{gig.comment}}
+      <span class="badge">{{gig.title | truncate:[20, '...']}}</span>
+      <span class="details">{{gig.start_time | dateFormat}}  {{gig.city_name}}  {{gig.comment}}</span>
     </a>
   </li>
 </ul>

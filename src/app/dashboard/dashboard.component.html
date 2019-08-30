@@ -2,7 +2,7 @@
 <div class="grid grid-pad">
   <a *ngFor="let gig of gigs" class="col-1-4" routerLink="/gigDetail/{{gig.id}}">
     <div class="module gigs">
-      <h4>{{gig.title}}</h4>
+      <h4>{{gig.title | truncate:[20, '...']}}</h4>
     </div>
   </a>
 </div>

@@ -1,7 +1,16 @@
 <div *ngIf="gig">
   <h2>{{gig.artist | uppercase}} Details</h2>
   <div><span>title: </span>{{gig.title}}</div>
-  <div><span>date: </span>{{gig.start_time | date:'h:mm a MMM d'}}</div>
+  <div [innerHTML]=gig.description></div>
+  <div><span>artists: </span>
+    <span>{{performer.name | truncate:[20, '...']}}</span>
+    <ul class="performers">
+      <li *ngFor="let performer of performers">
+        <span>{{performer.name | truncate:[20, '...']}}</span>
+      </li>
+    </ul>
+  </div>
+  <div><span>date: </span>{{gig.start_time | dateFormat}}</div>
   <div><span>location: </span>{{gig.city_name}}</div>
   <div>
     <label>comment:

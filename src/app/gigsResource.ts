@@ -8,6 +8,10 @@ export class GigListResource {
 }
 
 
+export class PerformerResource {
+  name: string;
+}
+
 export class GigResource {
   id: string;
   title: string;
@@ -19,5 +23,6 @@ export class GigResource {
   stop_time: Date;
   description: string;
   image: TopArtistImageResource[];
+  performers: { performer: PerformerResource[] };
   comment: string;
 }
