@@ -1,0 +1,11 @@
+<div *ngIf="artist">
+  <h2>{{artist.name | uppercase}} Details</h2>
+  <div><span>rank: </span>{{getRank(artist)}}</div>
+  <div><span>playcount: </span>{{artist.playcount}}</div>
+  <div>
+    <label>comment:
+      <input [(ngModel)]="artist.comment" placeholder="comment"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

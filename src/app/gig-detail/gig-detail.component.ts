@@ -1,5 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Gig } from '../gig';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GigService } from '../gig.service';
+import { Location } from '@angular/common';
+import { GigResource } from '../gigsResource';
+
 
 @Component({
   selector: 'app-gig-detail',
@@ -8,11 +12,24 @@ import { Gig } from '../gig';
 })
 export class GigDetailComponent implements OnInit {
 
-  @Input() gig: Gig;
+  gig: GigResource;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private gigService: GigService,
+              private location: Location) { }
 
   ngOnInit() {
+    this.getGig();
+  }
+
+  getGig(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.gigService.getGig(id)
+      .subscribe(gig => this.gig = gig);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

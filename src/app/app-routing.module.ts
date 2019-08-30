@@ -1,11 +1,42 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
+import { ArtistGigsComponent } from './artist-gigs/artist-gigs.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GigDetailComponent } from './gig-detail/gig-detail.component';
+import { TopArtistsComponent } from './top-artists/top-artists.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'gigs',
+    component: ArtistGigsComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'gigDetail/:id',
+    component: GigDetailComponent
+  },
+  {
+    path: 'artists',
+    component: TopArtistsComponent
+  }, {
+    path: 'artistDetail/:id',
+    component: ArtistDetailComponent
+  },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

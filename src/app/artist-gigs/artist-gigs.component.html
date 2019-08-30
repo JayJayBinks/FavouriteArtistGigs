@@ -1,12 +1,11 @@
 <h2>Gigs Of Favourite Artists</h2>
-<app-gig-detail [gig]="selectedGig"></app-gig-detail>
 <ul class="gigs">
-  <li *ngFor="let gig of gigs"
-      (click)="onSelect(gig)"
-      [class.selected]="gig === selectedGig">
-    <span class="badge">{{gig.artist}}</span>
-    {{gig.date | date:'h:mm a MMM d'}}
-    {{gig.location}}
-    {{gig.comment}}
+  <li *ngFor="let gig of gigs">
+    <a routerLink="/gigDetail/{{gig.id}}">
+      <span class="badge">{{gig.title}}</span>
+      {{gig.start_time | date:'h:mm a MMM d'}}
+      {{gig.city_name}}
+      {{gig.comment}}
+    </a>
   </li>
 </ul>

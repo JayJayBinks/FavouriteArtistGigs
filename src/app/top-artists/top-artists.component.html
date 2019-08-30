@@ -1,0 +1,10 @@
+<h2>Favourite Artists</h2>
+<ul class="artists">
+  <li *ngFor="let artist of artists">
+    <a routerLink="/artistDetail/{{getRank(artist)}}">
+      <span class="badge"> {{getRank(artist)}}</span>
+
+      {{artist.name}}
+    </a>
+  </li>
+</ul>
