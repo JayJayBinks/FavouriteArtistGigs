@@ -14,7 +14,7 @@ export class GigService {
 
   gigs: GigResource[] = [];
   gigResources: Map<string, GigListResource> = new Map();
-  private appKey: environment.gigApiKey;
+  private appKey: environment.eventfulApiKey;
   private baseUrl = 'https://cors-anywhere.herokuapp.com/http://api.eventful.com/json';
   private searchEventsUrl = artist => this.baseUrl + '/events/search?app_key=cg9zv3dxDXtndQhr' + '' + `&keywords=${artist}&location=Germany&date=Future`;
 
