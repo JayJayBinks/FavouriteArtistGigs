@@ -4,11 +4,12 @@ import { GigService } from '../gig.service';
 import { GigResource } from '../gigsResource';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-artist-gigs',
+  templateUrl: './artist-gigs.component.html',
+  styleUrls: ['./artist-gigs.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class ArtistGigsComponent implements OnInit {
+
   gigs: GigResource[] = [];
 
   constructor(private gigService: GigService,

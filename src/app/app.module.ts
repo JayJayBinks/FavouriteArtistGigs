@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ArtistGigsComponent } from './artist-gigs/artist-gigs.component';
+import { ArtistGigsComponent } from './favourite-artist-gigs/artist-gigs.component';
 import { ArtistService } from './artist.service';
 import { DateFormatPipe } from './DateTimePipe';
 import { GigDetailComponent } from './gig-detail/gig-detail.component';

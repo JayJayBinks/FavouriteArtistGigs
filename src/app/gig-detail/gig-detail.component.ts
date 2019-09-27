@@ -31,14 +31,18 @@ export class GigDetailComponent implements OnInit {
     this.gigService.getGig(id)
       .subscribe(gig => {
         this.gig = gig;
-        if (isNotNullOrUndefined(gig.performers)) {
-          if (isArrayLike(gig.performers.performer)) {
-            gig.performers.performer.forEach(performer => this.performers.push(performer));
-          } else {
-            this.performer = gig.performers.performer;
-          }
-        }
+        this.getPerformers(gig);
       });
+  }
+
+  private getPerformers(gig) {
+    if (isNotNullOrUndefined(gig.performers)) {
+      if (isArrayLike(gig.performers.performer)) {
+        gig.performers.performer.forEach(performer => this.performers.push(performer));
+      } else {
+        this.performer = gig.performers.performer;
+      }
+    }
   }
 
   goBack(): void {

@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
+import { ErrorHandlerService } from './errorHandler.service';
+import { GigListResource } from './gigsResource';
 import { MessageService } from './message.service';
 import { TopArtist, TopArtistsResource } from './topArtistsResource';
-import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +20,10 @@ export class ArtistService {
   private baseUrl = 'http://ws.audioscrobbler.com/2.0/';
   private topArtistsURL = this.baseUrl + '?method=user.gettopartists&user=' + this.user + '&api_key=' + this.apiKey + '&limit=10&format=json';
 
-  constructor(private messageService: MessageService, private http: HttpClient) { }
+  constructor(private messageService: MessageService, private http: HttpClient, private errorHandlerService: ErrorHandlerService) { }
 
   static getRank(artist: TopArtist): number {
-    return artist['@attr'].rank;
+    return Number(artist['@attr'].rank);
   }
 
   getTopArtists(): Observable<TopArtistsResource> {
@@ -29,7 +31,9 @@ export class ArtistService {
       return of(this.artistsResource);
     }
     return this.http.get<TopArtistsResource>(this.topArtistsURL)
-      .pipe(tap(resource => {
+      .pipe(
+        catchError(this.errorHandlerService.handleError<TopArtistsResource>('getTopArtists', null)),
+        tap(resource => {
         this.log('fetched artists');
         this.artists = resource.topartists.artist;
         this.artistsResource = resource;

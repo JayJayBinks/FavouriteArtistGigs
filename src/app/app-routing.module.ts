@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
-import { ArtistGigsComponent } from './artist-gigs/artist-gigs.component';
+import { ArtistGigsComponent } from './favourite-artist-gigs/artist-gigs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GigDetailComponent } from './gig-detail/gig-detail.component';
 import { TopArtistsComponent } from './top-artists/top-artists.component';

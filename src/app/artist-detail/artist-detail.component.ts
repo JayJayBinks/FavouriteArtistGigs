@@ -22,7 +22,7 @@ export class ArtistDetailComponent implements OnInit {
   }
 
   getRank(artist: TopArtist): number {
-    return artist['@attr'].rank;
+    return ArtistService.getRank(this.artist);
   }
 
   getArtist(): void {
