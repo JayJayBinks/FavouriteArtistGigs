@@ -3,10 +3,9 @@
   <div><span>title: </span>{{gig.title}}</div>
   <div [innerHTML]=gig.description></div>
   <div><span>artists: </span>
-    <span>{{performer.name | truncate:[20, '...']}}</span>
     <ul class="performers">
       <li *ngFor="let performer of performers">
-        <span>{{performer.name | truncate:[20, '...']}}</span>
+        <span>{{performer.name | truncate:['20', '...']}}</span>
       </li>
     </ul>
   </div>

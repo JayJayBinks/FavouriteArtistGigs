@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopArtistsComponent } from './top-artists/top-artists.component';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { TruncatePipe } from './TruncatePipe';
+import { GigSearchComponent } from './gig-search/gig-search.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TruncatePipe } from './TruncatePipe';
     TopArtistsComponent,
     ArtistDetailComponent,
     TruncatePipe,
-    DateFormatPipe
+    DateFormatPipe,
+    GigSearchComponent
   ],
   imports: [
     BrowserModule,
