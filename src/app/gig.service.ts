@@ -57,8 +57,9 @@ export class GigService {
     artists.forEach(artist => this.getGigs(artist)
       .subscribe(gigs => {
         if (isNotNullOrUndefined(gigs.events)) {
-          return gigs.events.event
+          gigs.events.event
             .forEach(gig => allGigs.push(gig));
+          allGigs.sort((a, b) => this.sortByDate(a, b));
         }
       }));
     allGigs.sort((a, b) => this.sortByDate(a, b));

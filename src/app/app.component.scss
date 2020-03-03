@@ -1,13 +1,36 @@
 /* AppComponent's private CSS styles */
+.navigation {
+  justify-content: center;
+  display: flex;
+}
+
+.navElement{
+  font-size: larger;
+  margin-right: 10px;
+}
+
 h1 {
-  font-size: 1.2em;
+  text-align: center;
+  font-size: medium;
   margin-bottom: 0;
 }
+
 h2 {
-  font-size: 2em;
+  font-size: medium;
+  text-align: center;
   margin-top: 0;
   padding-top: 0;
 }
+
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h4 {
+  position: relative;
+}
+
 nav a {
   padding: 5px 10px;
   text-decoration: none;
@@ -16,13 +39,16 @@ nav a {
   background-color: #eee;
   border-radius: 4px;
 }
+
 nav a:visited, a:link {
   color: #334953;
 }
+
 nav a:hover {
   color: #039be5;
   background-color: #cfd8dc;
 }
+
 nav a.active {
   color: #039be5;
 }

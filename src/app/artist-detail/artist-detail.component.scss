@@ -1,0 +1,25 @@
+h2 {
+  text-align: center;
+  margin-top: 1em;
+  padding-top: 0;
+}
+
+.content{
+  margin: auto;
+  display: flex;
+}
+
+ul{
+  list-style: none;
+  margin-left: 41%;
+}
+
+li{
+  margin: 1em;
+  font-size: large;
+}
+
+.highlighted{
+  font-weight: bold;
+  font-size: larger;
+}

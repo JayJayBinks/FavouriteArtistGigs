@@ -1,9 +1,9 @@
-<h2>Gigs Of Favourite Artists</h2>
+<h1>Gigs Of Favourite Artists</h1>
 <app-gig-search></app-gig-search>
 <ul class="gigs">
   <li *ngFor="let gig of gigs">
     <a routerLink="/gigDetail/{{gig.id}}">
-      <span class="badge">{{gig.title | truncate:[20, '...']}}</span>
+      <span class="badge">{{gig.title | truncate:[30, '...']}}</span>
       <span class="details">{{gig.start_time | dateFormat}}  {{gig.city_name}}  {{gig.comment}}</span>
     </a>
   </li>

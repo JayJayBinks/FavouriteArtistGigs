@@ -3,8 +3,7 @@
   <li *ngFor="let artist of artists">
     <a routerLink="/artistDetail/{{getRank(artist)}}">
       <span class="badge"> {{getRank(artist)}}</span>
-
-      {{artist.name}}
+      <span class="name">{{artist.name}}</span>
     </a>
   </li>
 </ul>

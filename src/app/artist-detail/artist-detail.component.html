@@ -1,11 +1,20 @@
 <div *ngIf="artist">
-  <h2>{{artist.name | uppercase}} Details</h2>
-  <div><span>rank: </span>{{getRank(artist)}}</div>
-  <div><span>playcount: </span>{{artist.playcount}}</div>
-  <div>
-    <label>comment:
-      <input [(ngModel)]="artist.comment" placeholder="comment"/>
-    </label>
+  <h2>{{artist.name | uppercase}}</h2>
+  <div class="content">
+    <ul>
+      <li><span>Your number <span class="highlighted">{{getRank(artist)}}</span> favourite band</span></li>
+
+      <li><span>You played this band  <span class="highlighted">{{artist.playcount}}</span> times</span></li>
+      <li>
+        <div class="comment">
+          <label>comment:
+            <input [(ngModel)]="artist.comment" placeholder="comment"/>
+          </label>
+        </div>
+      </li>
+      <li style="text-align: center">
+        <button (click)="goBack()">go back</button>
+      </li>
+    </ul>
   </div>
-  <button (click)="goBack()">go back</button>
 </div>

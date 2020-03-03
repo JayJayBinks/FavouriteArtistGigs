@@ -1,17 +1,37 @@
 /* artistsComponent's private CSS styles */
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
 .artists {
-  margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  min-width: 15em;
+  width: 25%;
+  margin: auto;
 }
 .artists li {
+  font-size: large;
   position: relative;
   cursor: pointer;
   background-color: #EEE;
   margin: .5em;
+  margin-bottom: 1em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 2em;
   border-radius: 4px;
 }
 
@@ -25,8 +45,8 @@
   color: #333;
   text-decoration: none;
   position: relative;
-  display: block;
-  width: 250px;
+  display: flex;
+  min-width: 250px;
 }
 
 .artists a:hover {
@@ -35,7 +55,7 @@
 
 .artists .badge {
   display: inline-block;
-  font-size: small;
+  font-size: 1em;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
   background-color:#405061;
@@ -44,8 +64,14 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
-  min-width: 16px;
-  text-align: right;
+  min-width: 30px;
+  text-align: center;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
+}
+
+.artists .name{
+  font-weight: bolder;
+  margin: auto auto 1em 22%;
+  text-align: center;
 }
