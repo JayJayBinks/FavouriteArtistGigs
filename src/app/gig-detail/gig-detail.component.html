@@ -1,20 +1,23 @@
 <div *ngIf="gig">
-  <h1>{{gig.artist | uppercase}} Details</h1>
-  <div><span>title: </span>{{gig.title}}</div>
-  <div [innerHTML]=gig.description></div>
-  <div><span>artists: </span>
-    <ul class="performers">
-      <li *ngFor="let performer of performers">
-        <span>{{performer.name | truncate:['20', '...']}}</span>
-      </li>
-    </ul>
-  </div>
-  <div><span>date: </span>{{gig.start_time | dateFormat}}</div>
-  <div><span>location: </span>{{gig.city_name}}</div>
-  <div>
-    <label>comment:
-      <input [(ngModel)]="gig.comment" placeholder="comment"/>
-    </label>
-  </div>
-  <button (click)="goBack()">go back</button>
+  <h1>{{gig.title}}</h1>
+  <ul>
+    <li [innerHTML]="gig.description"></li>
+    <li>
+      <ul>
+        <li class="highlighted" *ngFor="let performer of performers">
+          <span>{{performer.name}}</span>
+        </li>
+      </ul>
+    </li>
+    <li><span class="highlighted">{{gig.start_time | dateFormat}}</span></li>
+    <li><span class="highlighted">{{gig.city_name}} </span></li>
+    <li class="center">
+      <label>comment:
+        <input [(ngModel)]="gig.comment" placeholder="comment"/>
+      </label>
+    </li>
+    <li>
+      <button (click)="goBack()">go back</button>
+    </li>
+  </ul>
 </div>
