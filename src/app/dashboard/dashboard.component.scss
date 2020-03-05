@@ -21,6 +21,12 @@ h3 {
   margin-bottom: 0;
 }
 
+h4{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 a {
   text-decoration: none;
 }
@@ -33,7 +39,7 @@ a {
 
 .grid {
   margin: 0;
-  display: table;
+  box-sizing: border-box;
 }
 
 .column {

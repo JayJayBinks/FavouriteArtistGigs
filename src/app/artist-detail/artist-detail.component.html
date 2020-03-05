@@ -1,18 +1,23 @@
-<div *ngIf="artist" [ngStyle]="{'height': artist?.images[0]?.height + 'px' , 'background-image': 'url(' + artist?.images[0]?.url + ')' , 'background-repeat':' no-repeat'}">
+<div *ngIf="artist">
   <h2>{{artist.name | uppercase}}</h2>
-  <div class="content">
-    <ul>
-      <li><span>Your number <span class="highlighted">{{getRank(artist)}}</span> favourite band</span></li>
-      <li>
-        <div class="comment">
-          <label>comment:
-            <input [(ngModel)]="artist.comment" placeholder="comment"/>
-          </label>
-        </div>
-      </li>
-      <li style="text-align: center">
-        <button (click)="goBack()">go back</button>
-      </li>
-    </ul>
-  </div>
+  <section class="content">
+    <aside>
+      <img class="polaroid" alt="img" src="{{ artist?.images[0]?.url}}">
+    </aside>
+    <nav>
+      <ul>
+        <li><span>Your number <span class="highlighted">{{getRank(artist)}}</span> favourite band</span></li>
+        <li>
+          <div class="comment">
+            <label>comment:
+              <input [(ngModel)]="artist.comment" placeholder="comment"/>
+            </label>
+          </div>
+        </li>
+        <li>
+          <button (click)="goBack()">go back</button>
+        </li>
+      </ul>
+    </nav>
+  </section>
 </div>
