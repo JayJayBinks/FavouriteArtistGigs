@@ -1,13 +1,9 @@
 <div *ngIf="gig">
-  <h1>{{gig.title}}</h1>
   <ul>
+    <li><h1>{{gig.title}}</h1></li>
     <li [innerHTML]="gig.description"></li>
-    <li>
-      <ul>
-        <li class="highlighted" *ngFor="let performer of performers">
-          <span>{{performer.name}}</span>
-        </li>
-      </ul>
+    <li *ngFor="let performer of performers">
+      <span class="highlighted">{{performer.name}}</span>
     </li>
     <li><span class="highlighted">{{gig.start_time | dateFormat}}</span></li>
     <li><span class="highlighted">{{gig.city_name}} </span></li>

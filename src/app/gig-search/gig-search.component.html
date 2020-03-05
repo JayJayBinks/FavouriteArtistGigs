@@ -6,7 +6,7 @@
   <ul class="search-result">
     <li *ngFor="let gig of gigs$ | async">
       <a routerLink="/gigDetail/{{gig.id}}">
-        {{gig.title}}
+        {{gig.title}} {{gig.city_name}}
       </a>
     </li>
   </ul>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistService } from '../artist.service';
-import { TopArtist } from '../topArtistsResource';
+import { ArtistModel } from '../artist-service/artist.model';
+import { ArtistServiceFacade } from '../artist-service/artist.service.facade';
 
 @Component({
   selector: 'app-top-artists',
@@ -9,22 +9,22 @@ import { TopArtist } from '../topArtistsResource';
 })
 export class TopArtistsComponent implements OnInit {
 
-  artists: TopArtist[];
+  artists: ArtistModel[];
 
-  constructor(private artistService: ArtistService) { }
+  constructor(private artistService: ArtistServiceFacade) { }
 
   ngOnInit() {
     this.getTopArtists();
   }
 
-  getRank(artist: TopArtist): number {
-    return ArtistService.getRank(artist);
+  getRank(artist: ArtistModel): number {
+    return this.artistService.getRank(artist);
   }
 
   getTopArtists(): void {
     this.artistService.getTopArtists()
       .subscribe(artistsResource => {
-          this.artists = artistsResource.topartists.artist;
+          this.artists = artistsResource.items;
         }
       );
   }

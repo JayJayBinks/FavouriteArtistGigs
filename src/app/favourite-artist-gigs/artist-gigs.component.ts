@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistService } from '../artist.service';
+import { ArtistServiceFacade } from '../artist-service/artist.service.facade';
 import { GigService } from '../gig.service';
 import { GigResource } from '../gigsResource';
 
@@ -13,7 +13,7 @@ export class ArtistGigsComponent implements OnInit {
   gigs: GigResource[] = [];
 
   constructor(private gigService: GigService,
-              private artistService: ArtistService) { }
+              private artistService: ArtistServiceFacade) { }
 
   ngOnInit() {
     this.getGigs();
@@ -22,7 +22,7 @@ export class ArtistGigsComponent implements OnInit {
   getGigs(): void {
     this.artistService.getTopArtists()
       .subscribe(artistsResource => {
-          const artists = artistsResource.topartists.artist;
+          const artists = artistsResource.items;
           this.gigs = this.gigService.getGigsForArtists(artists.map(a => a.name));
         }
       );

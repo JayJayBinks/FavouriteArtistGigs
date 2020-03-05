@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ArtistService } from '../artist.service';
-import { TopArtist } from '../topArtistsResource';
+import { ArtistModel } from '../artist-service/artist.model';
+import { ArtistServiceFacade } from '../artist-service/artist.service.facade';
 
 @Component({
   selector: 'app-artist-detail',
@@ -11,18 +11,18 @@ import { TopArtist } from '../topArtistsResource';
 })
 export class ArtistDetailComponent implements OnInit {
 
-  artist: TopArtist;
+  artist: ArtistModel;
 
   constructor(private route: ActivatedRoute,
-              private artistService: ArtistService,
+              private artistService: ArtistServiceFacade,
               private location: Location) { }
 
   ngOnInit() {
     this.getArtist();
   }
 
-  getRank(artist: TopArtist): number {
-    return ArtistService.getRank(this.artist);
+  getRank(artist: ArtistModel): number {
+    return this.artistService.getRank(this.artist);
   }
 
   getArtist(): void {
