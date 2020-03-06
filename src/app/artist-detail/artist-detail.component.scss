@@ -10,7 +10,7 @@ h2 {
 }
 
 aside{
-  -webkit-flex: 1;
+  -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
@@ -38,4 +38,14 @@ li{
 .highlighted{
   font-weight: bold;
   font-size: larger;
+}
+
+@media (max-width: 1024px) {
+  .content{
+    display: block;
+    text-align: center;
+  }
+  .polaroid{
+    height: 320px;
+  }
 }
