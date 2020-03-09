@@ -1,51 +1,27 @@
+.polaroid {
+  height: inherit;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+ul{
+  list-style: none;
+}
+li{
+  text-align: center;
+  margin: .5em;
+}
+.highlighted{
+  font-weight: bolder;
+}
+
 h2 {
   text-align: center;
   margin-top: 1em;
   padding-top: 0;
 }
 
-.polaroid {
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-aside{
-  -webkit-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-}
-
-nav{
-  -webkit-flex: 3;
-  -ms-flex: 3;
-  flex: 3;
-}
-
-.content{
-  margin: auto;
-  display: flex;
-}
-
-ul{
-  list-style: none;
-}
-
-li{
-  margin: 1em;
-  font-size: large;
-}
-
-.highlighted{
+.highlighted {
   font-weight: bold;
   font-size: larger;
 }
 
-@media (max-width: 1024px) {
-  .content{
-    display: block;
-    text-align: center;
-  }
-  .polaroid{
-    height: 320px;
-  }
-}

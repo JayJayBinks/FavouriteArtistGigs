@@ -1,29 +1,10 @@
-*{
-  white-space: normal;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 1em;
-  padding-top: 0;
-}
-
-.content{
-  margin: auto;
-  display: flex;
-}
-
 ul{
   list-style: none;
 }
-
 li{
-  margin: 1em;
-  font-size: larger;
   text-align: center;
+  margin: .5em;
 }
-
 .highlighted{
-  font-weight: bold;
-  font-size: larger;
+  font-weight: bolder;
 }

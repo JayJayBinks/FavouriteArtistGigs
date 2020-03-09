@@ -1,9 +1,13 @@
-<h2>Favourite Artists</h2>
-<ul class="artists">
-  <li *ngFor="let artist of artists">
-    <a routerLink="/artistDetail/{{getRank(artist)}}">
-      <span class="badge"> {{getRank(artist)}}</span>
-      <span class="name">{{artist.name}}</span>
+<div>
+  <h2>Favourite Artists</h2>
+  <mat-nav-list>
+    <a *ngFor="let artist of artists" mat-list-item class="center" routerLink="/artistDetail/{{getRank(artist)}}">
+      <div class="artist">
+        <button mat-raised-button color="primary">
+          {{getRank(artist)}}
+        </button>
+        <span>{{artist.name}}</span>
+      </div>
     </a>
-  </li>
-</ul>
+  </mat-nav-list>
+</div>

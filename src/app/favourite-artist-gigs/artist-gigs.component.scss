@@ -1,87 +1,39 @@
 /* gigsComponent's private CSS styles */
+.mat-list-item-content {
+  justify-content: center;
+}
 
-h1 {
+* {
   text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 0;
 }
 
-h2 {
-  text-align: center;
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
+.mat-raised-button {
+  width: 14em;
+  margin-right: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-h3 {
-  text-align: center;
-  margin-bottom: 0;
+.gig {
+  width: 35em;
+  text-align: left;
+  margin-left: 8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.gigs {
-  list-style-type: none;
-  padding: 0;
-  width: 50%;
-  margin: auto;
-}
-.gigs li {
-  position: relative;
-  cursor: pointer;
-  background-color: #EEE;
-  margin: 1em;
-  height: 2.5em;
-  border-radius: 4px;
-}
+@import "src/variables";
 
-.gigs li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-
-.gigs a {
-  color: #333;
-  text-decoration: none;
-  position: relative;
-  display: block;
-  max-width: 50em;
-  height: 100%;
-}
-
-.gigs a:hover {
-  color:#607D8B;
-}
-
-.gigs .badge {
-  display: inline-block;
-  font-size: large;
-  color: white;
-  background-color:#405061;
-  line-height: 1em;
-  position: relative;
-  width: 25em;
-  text-align: center;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-  padding-top: 0.5em;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.gigs .details {
-  font-size: large;
-}
-
-@media (max-width: 1400px) {
-  .gigs li{
-    margin-bottom: 3em;
+@media #{$mat-xs}  {
+  .mat-list-item {
+    margin-bottom: 2em;
     font-size: medium;
   }
-  .gigs .badge {
-    margin-right: 0;
-    width: 100%;
+
+  .mat-raised-button {
     display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
+
+
+

@@ -17,7 +17,7 @@ export class ArtistServiceSpotify implements ArtistService {
   private clientId: string = environment.spotify_client_id;
   private redirectUri: string = environment.spotify_redirect_uri;
   private scope: string = environment.spotify_scope;
-  private loginUrl = 'https://accounts.spotify.com/authorize?';
+  private loginUrl = 'https://accounts.spotify.com/authorize?show_dialog=false&';
   private artisttsUrl = 'https://api.spotify.com/v1/me/top/artists';
   private token: string;
 

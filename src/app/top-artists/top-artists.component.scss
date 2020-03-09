@@ -1,84 +1,15 @@
-/* artistsComponent's private CSS styles */
-
-h1 {
+.mat-list-item-content{
+  justify-content: center;
+}
+*{
   text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 0;
 }
-
-h2 {
-  text-align: center;
-  font-size: 2em;
+.mat-raised-button{
+  min-width: 0;
+  margin-right: 1em;
 }
-
-h3 {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-.artists {
-  list-style-type: none;
-  padding: 0;
-  min-width: 15em;
-  width: 25%;
-  margin: auto;
-}
-.artists li {
-  font-size: large;
-  position: relative;
-  cursor: pointer;
-  background-color: #EEE;
-  margin: .5em;
-  margin-bottom: 1em;
-  padding: .3em 0;
-  height: 2em;
-  border-radius: 4px;
-}
-
-.artists li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-
-.artists a {
-  color: #333;
-  text-decoration: none;
-  position: relative;
-  display: flex;
-}
-
-.artists a:hover {
-  color:#607D8B;
-}
-
-.artists .badge {
-  display: inline-block;
-  font-size: 1em;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color:#405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 30px;
-  text-align: center;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-.artists .name{
-  font-weight: bolder;
-  margin: .5em 0 0 3em;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@media (max-width: 1400px) {
-  .artists .name{
-    margin: .5em 0 0 0;
-  }
+.artist{
+  width: 20em;
+  text-align: left;
+  margin-left: 8em
 }

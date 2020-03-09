@@ -1,23 +1,23 @@
 <div *ngIf="artist">
   <h2>{{artist.name | uppercase}}</h2>
   <section class="content">
-    <aside>
-      <img class="polaroid" alt="img" src="{{ artist?.images[0]?.url}}">
-    </aside>
-    <nav>
-      <ul>
-        <li><span>Your number <span class="highlighted">{{getRank(artist)}}</span> favourite band</span></li>
-        <li>
-          <div class="comment">
-            <label>comment:
-              <input [(ngModel)]="artist.comment" placeholder="comment"/>
-            </label>
-          </div>
-        </li>
-        <li>
-          <button (click)="goBack()">go back</button>
-        </li>
-      </ul>
-    </nav>
+    <mat-grid-list #grid cols="2" rowHeight="2:1.2">
+      <mat-grid-tile><img class="polaroid" alt="img" src="{{ artist?.images[0]?.url}}"></mat-grid-tile>
+      <mat-grid-tile class="alignStart">
+        <ul>
+          <li><span>Your number <span class="highlighted">{{getRank(artist)}}</span> favourite band</span></li>
+          <li>
+            <div class="comment">
+              <label>comment:
+                <input [(ngModel)]="artist.comment" placeholder="comment"/>
+              </label>
+            </div>
+          </li>
+          <li>
+            <button mat-raised-button color="primary" (click)="goBack()">go back</button>
+          </li>
+        </ul>
+      </mat-grid-tile>
+    </mat-grid-list>
   </section>
 </div>
