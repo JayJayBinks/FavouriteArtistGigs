@@ -1,0 +1,21 @@
+<h1>Feedback</h1>
+<form [formGroup]="feedbackForm" (ngSubmit)="submit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Subject*</mat-label>
+    <input matInput formControlName="subject" type="text">
+    <mat-error *ngIf="subject.invalid && (subject.dirty || subject.touched)">You must enter a value</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Text*</mat-label>
+    <textarea matInput formControlName="text" type="text"></textarea>
+    <mat-error *ngIf="text.invalid && (text.dirty || text.touched)">You must enter a value</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="button" type="submit" [disabled]="!feedbackForm.valid">Submit</button>
+</form>

@@ -31,6 +31,10 @@ const routes: Routes = [
     component: GigDetailComponent
   },
   {
+    path: 'feedback',
+    component: FeedbackComponent
+  },
+  {
     path: 'artists',
     component: TopArtistsComponent
   }, {
