@@ -5,9 +5,12 @@
 export enum ArtistServiceType {
   SPOTIFY, LASTFM
 }
+
 // replace this filename to 'environment.ts
 export const environment = {
   production: false,
+
+  // TODO this will be revealed in the http request :(
   eventfulApiKey: '',
 
   artistServiceType: ArtistServiceType.SPOTIFY,

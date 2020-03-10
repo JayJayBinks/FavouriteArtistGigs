@@ -1,0 +1,36 @@
+<h1>Feedback</h1>
+<form [formGroup]="feedbackForm" (ngSubmit)="submit()">
+  <label>
+    Email
+    <input formControlName="email" type="email"/>
+  </label>
+  <div *ngIf="subject.invalid && (subject.dirty || subject.touched)"
+       class="alert alert-danger">
+    <div *ngIf="subject.errors.required">
+      Subject is required.
+    </div>
+    <div *ngIf="subject.errors.minlength">
+      Please enter actual text
+    </div>
+  </div>
+  <label>
+    Subject*
+    <input formControlName="subject" type="text" required/>
+  </label>
+
+
+  <div *ngIf="text.invalid && (text.dirty || text.touched)"
+       class="alert alert-danger">
+    <div *ngIf="text.errors.required">
+      Text is required.
+    </div>
+    <div *ngIf="text.errors.minlength">
+      Please enter actual text
+    </div>
+  </div>
+  <label>
+    Text*
+    <textarea formControlName="text" type="text" required></textarea>
+  </label>
+  <button class="button" type="submit" [disabled]="!feedbackForm.valid">Submit</button>
+</form>

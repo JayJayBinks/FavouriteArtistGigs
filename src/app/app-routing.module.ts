@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
-import { ArtistGigsComponent } from './favourite-artist-gigs/artist-gigs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ArtistGigsComponent } from './favourite-artist-gigs/artist-gigs.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { GigDetailComponent } from './gig-detail/gig-detail.component';
 import { TopArtistsComponent } from './top-artists/top-artists.component';
 
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'gigDetail/:id',
     component: GigDetailComponent
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent
   },
   {
     path: 'artists',
