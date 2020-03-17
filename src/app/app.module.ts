@@ -12,6 +12,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { GigDetailComponent } from './gig-detail/gig-detail.component';
 import { GigSearchComponent } from './gig-search/gig-search.component';
 import { MessagesComponent } from './messages/messages.component';
+import { SharedModule } from './SharedModule';
 import { TopArtistsComponent } from './top-artists/top-artists.component';
 import { TruncatePipe } from './TruncatePipe';
 
@@ -31,6 +32,7 @@ import { TruncatePipe } from './TruncatePipe';
 
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

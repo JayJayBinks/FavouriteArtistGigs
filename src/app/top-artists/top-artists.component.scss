@@ -1,84 +1,37 @@
-/* artistsComponent's private CSS styles */
+@import "src/variables.scss";
 
-h1 {
-  text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 0;
+.collection {
+  border: none;
 }
 
-h2 {
-  text-align: center;
-  font-size: 2em;
+.collection .collection-item{
+  text-align: left;
 }
 
-h3 {
-  text-align: center;
-  margin-bottom: 0;
+.collection .collection-item a{
+  margin-left: 43%;
 }
 
-.artists {
-  list-style-type: none;
-  padding: 0;
-  min-width: 15em;
-  width: 25%;
-  margin: auto;
-}
-.artists li {
-  font-size: large;
-  position: relative;
-  cursor: pointer;
-  background-color: #EEE;
-  margin: .5em;
-  margin-bottom: 1em;
-  padding: .3em 0;
-  height: 2em;
-  border-radius: 4px;
+.collection .collection-item a span{
+  font-size: larger;
+  font-weight: bold;
 }
 
-.artists li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
 
-.artists a {
-  color: #333;
-  text-decoration: none;
-  position: relative;
-  display: flex;
-}
-
-.artists a:hover {
-  color:#607D8B;
-}
-
-.artists .badge {
-  display: inline-block;
-  font-size: 1em;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color:#405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 30px;
-  text-align: center;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-.artists .name{
-  font-weight: bolder;
-  margin: .5em 0 0 3em;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@media (max-width: 1400px) {
-  .artists .name{
-    margin: .5em 0 0 0;
+@media #{$small-and-down} {
+  .collection .collection-item a{
+    margin-left: 30%;
   }
+}
+@media #{$medium-and-up} {
+  // styles for medium screens and larger
+}
+@media #{$medium-and-down} {
+  // styles for medium screens and down
+}
+@media #{$large-and-up} {
+  // styles for large screens and up
+}
+@media #{$extra-large-and-up} {
+  // styles for extra large screens and up
 }

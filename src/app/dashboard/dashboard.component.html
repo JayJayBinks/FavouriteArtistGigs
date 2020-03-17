@@ -1,7 +1,20 @@
 <h1>Top Gigs</h1>
 <app-gig-search></app-gig-search>
-<div class="grid grid-pad">
-  <a *ngFor="let gig of gigs" class="column" routerLink="/gigDetail/{{gig.id}}">
+
+<div *ngIf="gigs?.length === 0" class="preloader-wrapper big active">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+    <div class="circle"></div>
+  </div><div class="circle-clipper right">
+    <div class="circle"></div>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <a *ngFor="let gig of gigs" class="col s6 m4 l3" routerLink="/gigDetail/{{gig.id}}">
     <div class="module gigs">
       <h4>{{gig.title | truncate:['40', '...']}}</h4>
     </div>
